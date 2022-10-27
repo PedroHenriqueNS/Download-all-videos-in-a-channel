@@ -5,27 +5,17 @@ from importlib.resources import path
 
 import os
 
-#url = input('Link do video')
-#path = input('path: ')
+def start_verificarPastaVideos():
+    actualPath = os.getcwd()
+    path = actualPath + r"\Videos"
 
-#yt = YouTube(url)
+    return os.path.exists(path)
 
-# infoVideo = {
-#     "Titulo": yt.title,
-#     "Número de views": yt.views,
-#     "Tamanho do vídeo": yt.length,
-#     "Aaliação do vídeo": yt.rating
-# }
-
-# print(infoVideo)
-
-# ys = yt.streams.get_highest_resolution()
-
-#print('Baixando...')
-
-#ys.download(path)
-
-#print('Download concluído!!')
+def criarPastaVideos():
+    actualPath = os.getcwd()
+    path = actualPath + r"\Videos"
+    
+    os.mkdir(path)
 
 def verificarExistencia(titulo) -> boolean:
     actualPath = os.getcwd()
@@ -63,8 +53,10 @@ def downloadVideo(url, path):
 
 #def verificar
 
+if start_verificarPastaVideos() == False:
+    criarPastaVideos()
 
-c = Channel('https://www.youtube.com/c/CanalBarueriLive')
+c = Channel('LINK DO CANAL DO YOUTUBE') ## TODO: Substitua com o link de um canal do YouTube
 path = os.getcwd() + "\Videos"
 
 for url in c.video_urls:
