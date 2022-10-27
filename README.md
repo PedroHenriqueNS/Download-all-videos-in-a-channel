@@ -2,5 +2,6 @@
  
 Some pip installs to do:
 
-#pip install pytube
-#pip install datetime
+pip install pytube
+
+pip install datetime
